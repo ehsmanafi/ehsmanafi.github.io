@@ -2,7 +2,7 @@
 <html>
 <head>
 <!-- Edit dj4e-samples/settings.py and add APP_NAME = 'DJ4E Samples' or similar -->
-<title>{% block title %}{{ settings.APP_NAME }}{% endblock %}</title>
+<title>Home | Ehsan Manafi</title>
 
 <!-- Replace this value (42-42) with the one provided by the autograder -->
 <meta name="dj4e" content="42-42">
@@ -41,21 +41,6 @@
 
 </head>
 <body>
-<div class="container">
-{% block navbar %} {% endblock %}
-{% block welcome %} {% endblock %}
-{% block messages %}
-    {% if messages %}
-    {% for msg in messages %}
-        <div class="alert alert-{{msg.level_tag}}" role="alert">
-        {{msg.message}}
-        </div>
-    {% endfor %}
-    {% endif %}
-{% endblock %}
-{% block content %}
-{% endblock %}
-</div>
-{% block footer %} {% endblock %}
+<h1>Hi there, I'm Ehsan Manafi!</h1>
 </body>
 </html>
