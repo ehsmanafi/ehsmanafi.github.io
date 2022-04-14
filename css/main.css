@@ -25,6 +25,14 @@
   background-color: #04AA6D;
 }
 
+#Line1{
+  word-break: keep-all;
+  font-family: sansation;
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
   .navbar a {
