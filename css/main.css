@@ -29,8 +29,7 @@
   word-break: keep-all;
   font-family: sansation;
   position: relative;
-  margin-top: 100px;
-  margin-left: 100px;
+  margin-right: 200px;
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
