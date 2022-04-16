@@ -25,6 +25,10 @@
   background-color: #04AA6D;
 }
 
+div {
+    display: block;
+}
+
 #Line1{
   word-break: keep-all;
   font-family: sansation;
@@ -39,6 +43,7 @@
 .grey {
     background-color: #333333;
 }
+
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
