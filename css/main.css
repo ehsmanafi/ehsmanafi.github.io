@@ -28,8 +28,6 @@
 #Line1{
   word-break: keep-all;
   font-family: sansation;
-  border: 1px solid black;
-  margin-right: 30px;
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
