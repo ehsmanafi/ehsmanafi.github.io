@@ -6,13 +6,10 @@
     <title>Ehsan Manafi | PhD Candidate & Researcher</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     
-    <!-- Font Awesome 6 for Social & Navigation Icons -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-      /* ==========================================================================
-         Design Tokens & Reset
-         ========================================================================== */
       :root {
         --bg-color: #f8fafc;
         --card-bg: #ffffff;
@@ -24,15 +21,19 @@
         --tag-bg: #eff6ff;
         --tag-text: #1e40af;
         --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-        --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         --radius: 12px;
-        --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition: all 0.2s ease-in-out;
       }
 
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
@@ -45,11 +46,9 @@
         min-height: 100vh;
       }
 
-      /* ==========================================================================
-         Navigation Bar
-         ========================================================================== */
+      /* Navigation Bar */
       .navbar {
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border-color);
         position: sticky;
@@ -58,7 +57,7 @@
       }
 
       .nav-container {
-        max-width: 960px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 1rem 1.5rem;
         display: flex;
@@ -71,7 +70,6 @@
         font-weight: 700;
         color: var(--text-primary);
         text-decoration: none;
-        letter-spacing: -0.02em;
       }
 
       .nav-links {
@@ -83,31 +81,26 @@
         text-decoration: none;
         color: var(--text-secondary);
         font-weight: 500;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
         border-radius: 6px;
         transition: var(--transition);
       }
 
-      .nav-links a:hover,
-      .nav-links a.active {
+      .nav-links a:hover {
         color: var(--accent-color);
         background-color: var(--tag-bg);
       }
 
-      /* ==========================================================================
-         Main Content & Profile Card
-         ========================================================================== */
+      /* Main Layout */
       .container {
-        max-width: 960px;
-        margin: 3rem auto;
+        max-width: 1000px;
+        margin: 2.5rem auto;
         padding: 0 1.5rem;
         flex: 1;
       }
 
+      /* Profile Hero Header */
       .profile-card {
         background-color: var(--card-bg);
         border: 1px solid var(--border-color);
@@ -117,19 +110,15 @@
         display: flex;
         gap: 2.5rem;
         align-items: flex-start;
-      }
-
-      .avatar-wrapper {
-        flex-shrink: 0;
+        margin-bottom: 2rem;
       }
 
       .avatar {
-        width: 220px;
-        height: 280px;
+        width: 210px;
+        height: 270px;
         object-fit: cover;
         border-radius: calc(var(--radius) - 4px);
         box-shadow: var(--shadow-sm);
-        display: block;
       }
 
       .bio-content {
@@ -142,67 +131,48 @@
         color: var(--tag-text);
         font-size: 0.8rem;
         font-weight: 600;
-        padding: 0.2rem 0.6rem;
+        padding: 0.25rem 0.65rem;
         border-radius: 20px;
         margin-bottom: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
       }
 
       .bio-content h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
         font-weight: 800;
-        line-height: 1.25;
+        margin-bottom: 0.25rem;
+      }
+
+      .affiliation {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
         margin-bottom: 1rem;
-        letter-spacing: -0.025em;
       }
 
       .bio-content p {
         color: var(--text-secondary);
         margin-bottom: 1rem;
-        font-size: 1.025rem;
+        font-size: 1rem;
       }
 
-      .bio-content p.intro {
-        font-size: 1.125rem;
-        color: var(--text-primary);
-      }
-
-      /* Research Interest Pills */
-      .interests-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin: 1.5rem 0;
-      }
-
-      .interests-tags span {
-        background-color: #f1f5f9;
-        color: var(--text-secondary);
-        font-size: 0.85rem;
-        font-weight: 500;
-        padding: 0.35rem 0.75rem;
-        border-radius: 6px;
-        border: 1px solid var(--border-color);
-      }
-
-      /* Social Icon Buttons */
+      /* Social & Contact Links */
       .social-links {
         display: flex;
-        gap: 0.85rem;
-        margin-top: 1.5rem;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
       }
 
       .social-links a {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
+        gap: 0.5rem;
+        padding: 0.5rem 0.85rem;
+        border-radius: 8px;
         background-color: #f1f5f9;
         color: var(--text-primary);
-        font-size: 1.15rem;
+        font-size: 0.875rem;
+        font-weight: 500;
         text-decoration: none;
         transition: var(--transition);
         border: 1px solid var(--border-color);
@@ -212,12 +182,163 @@
         background-color: var(--accent-color);
         color: #ffffff;
         border-color: var(--accent-color);
-        transform: translateY(-2px);
       }
 
-      /* ==========================================================================
-         Footer
-         ========================================================================== */
+      /* Sections & Cards */
+      .section-block {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .section-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        border-bottom: 2px solid var(--tag-bg);
+        padding-bottom: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      /* Timeline Items */
+      .timeline-item {
+        position: relative;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--border-color);
+        margin-bottom: 1.75rem;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+
+      .item-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .item-date {
+        font-size: 0.85rem;
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+
+      .item-subtitle {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .item-body {
+        font-size: 0.925rem;
+        color: var(--text-secondary);
+      }
+
+      .item-body ul {
+        list-style-type: disc;
+        padding-left: 1.25rem;
+        margin-top: 0.5rem;
+      }
+
+      .item-body li {
+        margin-bottom: 0.35rem;
+      }
+
+      /* Publication Lists */
+      .pub-list {
+        list-style: none;
+      }
+
+      .pub-item {
+        margin-bottom: 1.25rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px dashed var(--border-color);
+      }
+
+      .pub-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .pub-authors {
+        font-size: 0.95rem;
+        color: var(--text-primary);
+      }
+
+      .pub-title {
+        font-weight: 600;
+      }
+
+      .pub-journal {
+        font-style: italic;
+        color: var(--text-secondary);
+      }
+
+      .pub-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        background-color: #f1f5f9;
+        border: 1px solid var(--border-color);
+        padding: 0.15rem 0.5rem;
+        border-radius: 4px;
+        margin-top: 0.35rem;
+      }
+
+      /* Skills & Tag Grid */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .skill-category h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .tag-cloud span {
+        background-color: var(--tag-bg);
+        color: var(--tag-text);
+        font-size: 0.825rem;
+        font-weight: 500;
+        padding: 0.25rem 0.6rem;
+        border-radius: 6px;
+      }
+
+      /* Footer */
       footer {
         text-align: center;
         padding: 2rem 1.5rem;
@@ -227,93 +348,303 @@
         margin-top: auto;
       }
 
-      /* ==========================================================================
-         Responsive Layout
-         ========================================================================== */
       @media (max-width: 768px) {
         .profile-card {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          padding: 1.75rem;
         }
 
-        .avatar {
-          width: 170px;
-          height: 210px;
-        }
-
-        .bio-content h1 {
-          font-size: 1.75rem;
-        }
-
-        .interests-tags,
         .social-links {
           justify-content: center;
+        }
+
+        .nav-links {
+          display: none; /* Hide standard links on mobile */
         }
       }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
+    <!-- Sticky Navigation -->
     <header class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Ehsan Manafi</a>
+            <a href="#" class="nav-brand">Ehsan Manafi</a>
             <nav class="nav-links">
-                <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
-                <a href="projects.html"><i class="fa-solid fa-list-check"></i> Projects</a>
+                <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+                <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+                <a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+                <a href="#publications"><i class="fa-solid fa-book"></i> Publications</a>
+                <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Section -->
     <main class="container">
-        <section class="profile-card">
-            <div class="avatar-wrapper">
-                <img id="ProPic" src="images/Profile.jpg" alt="Ehsan Manafi" class="avatar">
-            </div>
+        
+        <!-- About / Profile Hero -->
+        <section id="about" class="profile-card">
+            <img id="ProPic" src="images/Profile.jpg" alt="Ehsan Manafi" class="avatar">
             
             <div class="bio-content">
                 <span class="badge">PhD Candidate</span>
-                <h1>Hi, I'm Ehsan Manafi</h1>
+                <h1>Ehsan Manafi</h1>
+                <div class="affiliation">
+                    IOC-UPC | CITCEA-UPC, Universitat Politècnica de Catalunya · BarcelonaTech, Spain[cite: 1]
+                </div>
                 
-                <p class="intro">
-                    I am pursuing a PhD in Industrial Engineering at <strong>Universitat Politècnica de Catalunya · Barcelona Tech (UPC)</strong>.
+                <p>
+                    Doctoral researcher specializing in energy-aware production scheduling, demand response, sustainable operations, and the integration of Battery Energy Storage Systems (BESS) into industrial decision-making[cite: 1].
                 </p>
 
                 <p>
-                    My research integrates operational research models (e.g., MILP, Constraint Programming) and machine learning techniques—particularly reinforcement learning—to optimize complex energy systems. My work also bridges operational research with electrical engineering perspectives while leveraging advanced decomposition methods like Logic-Based Benders Decomposition (LBBD).
+                    My research leverages operations research models (MILP, Constraint Programming)[cite: 1, 2] and reinforcement learning[cite: 1, 2] to optimize flexible manufacturing and complex energy systems[cite: 1].
                 </p>
 
-                <div class="interests-tags">
-                    <span>Operations Research</span>
-                    <span>Reinforcement Learning</span>
-                    <span>Supply Chain</span>
-                    <span>Manufacturing</span>
-                    <span>Transportation</span>
-                </div>
-
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ehsan-manafi-a484121b4/" target="_blank" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=KDcXoakAAAAJ&hl=es" target="_blank" aria-label="Google Scholar">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </a>
-                    <a href="https://www.researchgate.net/profile/Ehsan-Manafi" target="_blank" aria-label="ResearchGate">
-                        <i class="fa-brands fa-researchgate"></i>
-                    </a>
-                    <a href="https://github.com/ehsmanafi/" target="_blank" aria-label="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
+                    <a href="mailto:ehsan.manafi@upc.edu"><i class="fa-solid fa-envelope"></i> Email[cite: 1]</a>
+                    <a href="https://www.linkedin.com/in/ehsan-manafi-a484121b4/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn[cite: 1]</a>
+                    <a href="https://scholar.google.com/citations?user=KDcXoakAAAAJ&hl=es" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Scholar[cite: 1]</a>
+                    <a href="https://github.com/ehsmanafi/" target="_blank"><i class="fa-brands fa-github"></i> GitHub[cite: 1]</a>
+                    <a href="https://www.researchgate.net/profile/Ehsan-Manafi" target="_blank"><i class="fa-brands fa-researchgate"></i> ResearchGate[cite: 1]</a>
                 </div>
             </div>
         </section>
+
+        <!-- Research Experience -->
+        <section id="experience" class="section-block">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Research Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Research Engineer | CITCEA-UPC (PULSE Project)[cite: 1]</span>
+                    <span class="item-date">May 2026 – Present[cite: 1]</span>
+                </div>
+                <div class="item-subtitle">Barcelona, Spain[cite: 1]</div>
+                <div class="item-body">
+                    <ul>
+                        <li>Analyze national and EU-level grid interconnection standards (EN 50549, IEEE 1547, G99) to support wireless V2G converter compliance[cite: 1].</li>
+                        <li>Collaborate with European partners (CENEX-UK, EATON, HEDNO, PPC, VTT) to align regulatory interpretations across pilot sites[cite: 1].</li>
+                        <li>Contribute to HIL/PHIL (Hardware-in-the-Loop) compliance testing design for modular firmware validation[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Visiting PhD Researcher | Technical University of Darmstadt[cite: 1]</span>
+                    <span class="item-date">Dec 2025 – Feb 2026[cite: 1]</span>
+                </div>
+                <div class="item-subtitle">Darmstadt, Germany[cite: 1]</div>
+                <div class="item-body">
+                    <ul>
+                        <li>Conducted advanced mathematical modeling of production planning with Prof. Dr. Christoph H. Glock, incorporating BESS and battery degradation[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Research Assistant | Horizon Europe FLEX4FACT Project (UPC)[cite: 1]</span>
+                    <span class="item-date">May 2023 – May 2026[cite: 1]</span>
+                </div>
+                <div class="item-subtitle">Barcelona, Spain[cite: 1]</div>
+                <div class="item-body">
+                    <ul>
+                        <li>Developed production scheduling and flexible manufacturing models using MILP and CP in CPLEX and OR-Tools[cite: 1].</li>
+                        <li>Simulated real-time data pipelines for industrial Digital Twin environments to enable energy-aware scheduling[cite: 1].</li>
+                        <li>Formulated multi-objective MILP models balancing operational costs with CO₂ emission reduction targets[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="section-block">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Ph.D. Candidate in Supply Chain and Operations Management[cite: 1]</span>
+                    <span class="item-date">2022 – April 2027[cite: 1]</span>
+                </div>
+                <div class="item-subtitle">Universitat Politècnica de Catalunya (UPC), Barcelona, Spain[cite: 1]</div>
+                <div class="item-body">
+                    Focused on energy-aware production scheduling, demand response, and Battery Energy Storage Systems (BESS) integration[cite: 1].
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">M.Sc. in Industrial Engineering[cite: 1]</span>
+                    <span class="item-date">2019 – 2021[cite: 1]</span>
+                </div>
+                <div class="item-subtitle">Tehran University, Tehran, Iran (GPA: 3.6/4.0)[cite: 1]</div>
+                <div class="item-body">
+                    Specialized in Operations Research, advanced scheduling algorithms, and metaheuristics[cite: 1].
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">B.Sc. in Industrial Engineering[cite: 1]</span>
+                    <span class="item-date">2015 – 2019[cite: 1]</span>
+                </div>
+                <div class="item-subtitle">Kharazmi University, Tehran, Iran (GPA: 3.9/4.0)[cite: 1]</div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="section-block">
+            <h2 class="section-title"><i class="fa-solid fa-book"></i> Publications & Manuscripts</h2>
+            
+            <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--text-secondary);">International Peer-Reviewed Journals</h3>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <div class="pub-authors"><strong>Manafi, E.</strong>, Domenech, B., Tavakkoli-Moghaddam, R., Ranaboldo, M. (2025)</div>
+                    <div class="pub-title">A self-learning whale optimization algorithm based on reinforcement learning for a dual-resource flexible job shop scheduling problem.</div>
+                    <div class="pub-journal">Applied Soft Computing, 180, 113436[cite: 2].</div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-authors"><strong>Manafi, E.</strong>, Domenech, B., Ranaboldo, M., Bullich-Massagué, E., Juanpera-Gallel, M., Moreno, R. P. (2026)[cite: 2]</div>
+                    <div class="pub-title">An energy-aware scheduling problem in a job shop floor/molding production system under sequence-dependent setups[cite: 2].</div>
+                    <div class="pub-journal">The International Journal of Advanced Manufacturing Technology[cite: 2].</div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-authors">Ranaboldo, M., ..., <strong>Manafi, E.</strong>, Rövekamp, J., Tani, R. (2024)[cite: 2]</div>
+                    <div class="pub-title">A comprehensive overview of industrial demand response status in Europe[cite: 2].</div>
+                    <div class="pub-journal">Renewable and Sustainable Energy Reviews, 203, 114797[cite: 2].</div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-authors"><strong>Manafi, E.</strong>, Tavakkoli-Moghaddam, R., Mahmoodjanloo, M. (2022)[cite: 2]</div>
+                    <div class="pub-title">A centroid opposition-based coral reefs algorithm for solving an integrated scheduling and conflict-free routing problem[cite: 2].</div>
+                    <div class="pub-journal">Applied Soft Computing, Vol. 130[cite: 2].</div>
+                </li>
+            </ul>
+
+            <h3 style="font-size: 1rem; margin: 1.5rem 0 1rem 0; color: var(--text-secondary);">Working Manuscripts & Under Review[cite: 2]</h3>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <div class="pub-authors"><strong>Manafi, E.</strong>, Noorsumar, G., Arbes, F., Domenech, B., Haugen, K. L., Bullich-Massagué, E., Ranaboldo, M. (2026)[cite: 2]</div>
+                    <div class="pub-title">Data-Driven Energy-Aware Scheduling Optimization for a Single Speed-Scaling Machine: A Manufacturing Industry Case[cite: 2].</div>
+                    <span class="pub-badge">Working Paper[cite: 2]</span>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-authors"><strong>Manafi, E.</strong>, Domenech, B., Glock, C. H., Bullich-Massagué, E., Ranaboldo, M. (2026)[cite: 2]</div>
+                    <div class="pub-title">Energy- and Environment-Aware Job Shop Scheduling with Battery Degradation and Tradable Carbon Tax[cite: 2].</div>
+                    <span class="pub-badge">Manuscript in Preparation[cite: 2]</span>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-authors"><strong>Manafi, E.</strong>, Domenech, B., Bullich-Massagué, E., Ranaboldo, M. (2026)[cite: 2]</div>
+                    <div class="pub-title">Integrated Production-Energy Scheduling of a Flexible Manufacturing System with Embedded Employee EV Energy Storage for Demand Response Participation[cite: 2].</div>
+                    <span class="pub-badge">Manuscript in Preparation[cite: 2]</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Teaching & Academic Service -->
+        <section class="section-block">
+            <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Teaching & Academic Service</h2>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Teaching Assistant / Lab Instructor | UPC[cite: 2]</span>
+                    <span class="item-date">Fall Semester 2024[cite: 2]</span>
+                </div>
+                <div class="item-body">
+                    Conducted English lab sessions for Erasmus Master's students in Industrial Scheduling under Dr. Bruno Domenech[cite: 2]. Covered forecasting, inventory management, TSP, VRP, and production scheduling heuristics (Helgeson-Birnie, Boctor, Bedworth-Bailey)[cite: 2].
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">EURO 2024 Speaker | 33rd European Conference on Operational Research[cite: 2]</span>
+                    <span class="item-date">July 2024[cite: 2]</span>
+                </div>
+                <div class="item-body">
+                    Presented research on energy-aware production scheduling and flexible manufacturing in Copenhagen, Denmark[cite: 2].
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Local Organizing Assistant | LOGMS 2026 Conference[cite: 2]</span>
+                    <span class="item-date">July 2026[cite: 2]</span>
+                </div>
+                <div class="item-body">
+                    Assisted event logistics and attendee operations for the 14th International Conference on Logistics and Maritime Systems in Barcelona[cite: 2].
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills & Certifications -->
+        <section id="skills" class="section-block">
+            <h2 class="section-title"><i class="fa-solid fa-code"></i> Skills & Certifications</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <div class="tag-cloud">
+                        <span>Python (PyTorch, TensorFlow, Stable-Baselines3, NumPy, Pandas)[cite: 3]</span>
+                        <span>MATLAB[cite: 3]</span>
+                        <span>HTML[cite: 3]</span>
+                        <span>CSS[cite: 3]</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Optimization & Solvers[cite: 3]</h4>
+                    <div class="tag-cloud">
+                        <span>CPLEX[cite: 3]</span>
+                        <span>OR-Tools[cite: 3]</span>
+                        <span>MILP & CP[cite: 1]</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Data Analytics & Tools[cite: 3]</h4>
+                    <div class="tag-cloud">
+                        <span>SQL / T-SQL[cite: 3]</span>
+                        <span>Tableau[cite: 3]</span>
+                        <span>Power BI[cite: 3]</span>
+                        <span>Git[cite: 3]</span>
+                        <span>LaTeX[cite: 3]</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Certifications[cite: 3]</h4>
+                    <div class="tag-cloud">
+                        <span>Reinforcement Learning (Univ. of Alberta)[cite: 3]</span>
+                        <span>Deep Learning (DeepLearning.AI)[cite: 3]</span>
+                        <span>Django Specialization (Univ. of Michigan)[cite: 3]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic References -->
+        <section class="section-block">
+            <h2 class="section-title"><i class="fa-solid fa-user-group"></i> Academic References</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div>
+                    <strong>Prof. Dr. Bruno Domenech[cite: 3]</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">PhD Supervisor & Director of IOC, Universitat Politècnica de Catalunya (UPC)[cite: 3]</span><br>
+                    <a href="mailto:bruno.domenech@upc.edu" style="font-size: 0.9rem; color: var(--accent-color);">bruno.domenech@upc.edu[cite: 3]</a>
+                </div>
+                <div>
+                    <strong>Prof. Dr. Matteo Ranaboldo[cite: 3]</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">PhD Co-Advisor & Lecturer at CITCEA, Universitat Politècnica de Catalunya (UPC)[cite: 3]</span><br>
+                    <a href="mailto:matteo.ranaboldo@upc.edu" style="font-size: 0.9rem; color: var(--accent-color);">matteo.ranaboldo@upc.edu[cite: 3]</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p>© Ehsan Manafi. Built for clarity and performance.</p>
+        <p>© Ehsan Manafi. Built for performance and academic presentation.[cite: 1]</p>
     </footer>
 
 </body>
