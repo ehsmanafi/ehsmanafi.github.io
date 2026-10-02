@@ -1,40 +1,320 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Home | Ehsan Manafi</title>
-		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-		<link rel="stylesheet"  href="/css/main.css">		
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehsan Manafi | PhD Candidate & Researcher</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Font Awesome 6 for Social & Navigation Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-	</head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<body>
-		<div class="navbar">
-  		  <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a> 
-		  <a href="/projects"><i class="fa fa-fw fa-search"></i> Projects</a> 
-		</div>
-		<h1 align="center" >Hi, I'm Ehsan Manafi!</h1>
-		<div style="background-color:#AAFF7F;">
-		<table>
-			<tbody>
-				<tr>
-					<td align="center" valign="top" width="250">
-						<img id="ProPic" src="/images/Profile.jpg" alt="Trulli" width="350" height="460"> </td>
-					<td width="50"></td>
-					<td id="Line1" width="1000" style="font-size:30px;text-align: justify;text-justify:inter-word;"> <p style="font-size:50px;text-align: justify;text-justify:inter-word;"> Welcome to my personal website! </p>
-						<p> </p>
-						I am currently pursuing a PhD in Industrial Engineering at Universitat Politècnica de Catalunya · Barcelona Tech (UPC). My research integrates operational research models (e.g., MILP, CP) 
-						and machine learning techniques, particularly reinforcement learning, to optimize energy systems. My work also extends to combining operational research with electrical engineering perspectives while leveraging advanced methods like logic-based Bender decomposition.
-						My research interests lie primarily in Operation Research, Reinforcement Learning, Supply Chain, Manufacturing, and Transportation.
-						<p> </p>
-						<a href="https://www.linkedin.com/in/ehsan-manafi-a484121b4/" target="_blank" style="display: inline-block; margin-right: 20px;"><i class="fa fa-linkedin-square" style="font-size:50px;color:black"></i></a>
-						<a href="https://scholar.google.com/citations?user=KDcXoakAAAAJ&hl=es" target="_blank" style="display: inline-block; margin-right: 20px;"><i class="fa fa-graduation-cap" style="font-size:50px;color:black"></i></a>
-						<a href="https://www.researchgate.net/profile/Ehsan-Manafi" target="_blank" style="display: inline-block; margin-right: 20px;"><img src="images/researchgate-logo.svg" alt="ResearchGate" style="width:40px; height:40px;"></a>
-						<a href="https://github.com/ehsmanafi/" target="_blank" style="display: inline-block; margin-right: 20px;"><i class="fa fa-github" style="font-size:50px;color:black"></i></a>
-						</td>
-				</tr>
-			</tbody>
-		</table>
-		</div>
-	</body>
-	
+    <style>
+      /* ==========================================================================
+         Design Tokens & Reset
+         ========================================================================== */
+      :root {
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --accent-color: #2563eb;
+        --accent-hover: #1d4ed8;
+        --border-color: #e2e8f0;
+        --tag-bg: #eff6ff;
+        --tag-text: #1e40af;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        --radius: 12px;
+        --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        line-height: 1.65;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* ==========================================================================
+         Navigation Bar
+         ========================================================================== */
+      .navbar {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--accent-color);
+        background-color: var(--tag-bg);
+      }
+
+      /* ==========================================================================
+         Main Content & Profile Card
+         ========================================================================== */
+      .container {
+        max-width: 960px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+        flex: 1;
+      }
+
+      .profile-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        gap: 2.5rem;
+        align-items: flex-start;
+      }
+
+      .avatar-wrapper {
+        flex-shrink: 0;
+      }
+
+      .avatar {
+        width: 220px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: calc(var(--radius) - 4px);
+        box-shadow: var(--shadow-sm);
+        display: block;
+      }
+
+      .bio-content {
+        flex: 1;
+      }
+
+      .badge {
+        display: inline-block;
+        background-color: var(--tag-bg);
+        color: var(--tag-text);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .bio-content h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+        letter-spacing: -0.025em;
+      }
+
+      .bio-content p {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        font-size: 1.025rem;
+      }
+
+      .bio-content p.intro {
+        font-size: 1.125rem;
+        color: var(--text-primary);
+      }
+
+      /* Research Interest Pills */
+      .interests-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .interests-tags span {
+        background-color: #f1f5f9;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        border: 1px solid var(--border-color);
+      }
+
+      /* Social Icon Buttons */
+      .social-links {
+        display: flex;
+        gap: 0.85rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-color: #f1f5f9;
+        color: var(--text-primary);
+        font-size: 1.15rem;
+        text-decoration: none;
+        transition: var(--transition);
+        border: 1px solid var(--border-color);
+      }
+
+      .social-links a:hover {
+        background-color: var(--accent-color);
+        color: #ffffff;
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+      }
+
+      /* ==========================================================================
+         Footer
+         ========================================================================== */
+      footer {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        border-top: 1px solid var(--border-color);
+        margin-top: auto;
+      }
+
+      /* ==========================================================================
+         Responsive Layout
+         ========================================================================== */
+      @media (max-width: 768px) {
+        .profile-card {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 1.75rem;
+        }
+
+        .avatar {
+          width: 170px;
+          height: 210px;
+        }
+
+        .bio-content h1 {
+          font-size: 1.75rem;
+        }
+
+        .interests-tags,
+        .social-links {
+          justify-content: center;
+        }
+      }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Ehsan Manafi</a>
+            <nav class="nav-links">
+                <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="projects.html"><i class="fa-solid fa-list-check"></i> Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container">
+        <section class="profile-card">
+            <div class="avatar-wrapper">
+                <img id="ProPic" src="images/Profile.jpg" alt="Ehsan Manafi" class="avatar">
+            </div>
+            
+            <div class="bio-content">
+                <span class="badge">PhD Candidate</span>
+                <h1>Hi, I'm Ehsan Manafi</h1>
+                
+                <p class="intro">
+                    I am pursuing a PhD in Industrial Engineering at <strong>Universitat Politècnica de Catalunya · Barcelona Tech (UPC)</strong>.
+                </p>
+
+                <p>
+                    My research integrates operational research models (e.g., MILP, Constraint Programming) and machine learning techniques—particularly reinforcement learning—to optimize complex energy systems. My work also bridges operational research with electrical engineering perspectives while leveraging advanced decomposition methods like Logic-Based Benders Decomposition (LBBD).
+                </p>
+
+                <div class="interests-tags">
+                    <span>Operations Research</span>
+                    <span>Reinforcement Learning</span>
+                    <span>Supply Chain</span>
+                    <span>Manufacturing</span>
+                    <span>Transportation</span>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ehsan-manafi-a484121b4/" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=KDcXoakAAAAJ&hl=es" target="_blank" aria-label="Google Scholar">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Ehsan-Manafi" target="_blank" aria-label="ResearchGate">
+                        <i class="fa-brands fa-researchgate"></i>
+                    </a>
+                    <a href="https://github.com/ehsmanafi/" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Ehsan Manafi. Built for clarity and performance.</p>
+    </footer>
+
+</body>
 </html>
